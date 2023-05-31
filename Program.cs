@@ -8,31 +8,22 @@
 
 // 23432 -> да
 
-System.Console.WriteLine("Введите число пятизначное число: ");
+System.Console.WriteLine("Введите пятизначное число: ");
 int num = int.Parse(Console.ReadLine());
 
-if (num >9999 && num>100000)
-    int y = num%10;
-    int y2 = num%100;
-    int x = num/1000;
-    int x2 = num/100;
-System.Console.WriteLine(y2);
+
+int y = num % 10;
+int y2 = num/10 % 10;
+int x = num / 10000;
+int x2 = num / 1000 % 10;
+    if (num >9999 && num<100000)
+        if(y == x && y2 == x2)
+            System.Console.WriteLine("Палиндром");
+        else
+            System.Console.WriteLine("Не палиндром");
+    else
+    System.Console.WriteLine("Нужно ввести пятизначное число");
+// System.Console.WriteLine($"{y},{y2},{x},{x2}");
 
 
 
-// int num,r,sum=0,t;
-// Console.Write(«Введите пятизначное число: «);
-// num = Convert.ToInt32(Console.ReadLine());
-// if(num>9999 && num<100000)
-// {
-// for(t=num;num!=0;num=num/10)
-// {
-// r=num % 10;
-// sum=sum*10+r;
-// }
-// if(t==sum)
-// Console.Write($»{t} является палиндромом.»);
-// else
-// Console.Write($»{t} не является палиндромом.»);
-// } else
-// Console.Write(«Введите пятизначное число! «);
