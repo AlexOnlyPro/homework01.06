@@ -23,7 +23,7 @@ int z2 = InPut("Введите координату Z второй точки: "
 
 int a = x2 - x1;
 int b = y2 - y1;
-int c = z1 - z2;
+int c = z2 - z1;
 
 double result = Math.Sqrt(a*a + b*b + c*c);
 System.Console.WriteLine($"Расстояние между точками {result}");
