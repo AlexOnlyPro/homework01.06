@@ -6,41 +6,38 @@
 System.Console.WriteLine("Введите пятизначное число: ");
 int num = int.Parse(Console.ReadLine());
 int count = 0;
-System.Console.WriteLine(num);
-
-void fis()
+fis(num);
+int[] front = new int[count];
+int[] back = new int[count];
+string mes = "Палиндром";
+void fis(int bar)
 {
-    while (num > 0)
+    while (bar > 0)
     {
-        num = num / 10;
+        bar = bar / 10;
         count++;
     }
 }
-fis();
-System.Console.WriteLine(count);
-System.Console.WriteLine(num);
-
-int[] front = new int[count];
-int[] back = new int[count];
-
+void Fronti(int[] func, int bar)
+{
+    for (int i = 0; i < count; i++) if (i == 0) func[i] = bar % 10;
+        else
+        {
+            bar = bar / 10;
+            func[i] = bar % 10;
+        }
+}
+Fronti(front, num);
 for (int i = 0; i < count; i++)
-    if (i == 0) front[i] = num % 10;
-    else
-    {
-        num = num / 10;
-        front[i] = num % 10;
-    }
-
-System.Console.WriteLine(String.Join(" ", front));
-
-// int y = num % 10;
-// int y2 = num/10 % 10;
-// int x = num / 10000;
-// int x2 = num / 1000 % 10;
-//     if (num >9999 && num<100000)
-//         if(y == x && y2 == x2)
-//             System.Console.WriteLine("Палиндром");
-//         else
-//             System.Console.WriteLine("Не палиндром");
-//     else
-//     System.Console.WriteLine("Нужно ввести пятизначное число");
+{
+    back[i] = front[i];
+}
+Array.Reverse(front);
+// System.Console.WriteLine(String.Join(" ", front));
+// System.Console.WriteLine(String.Join(" ", back));
+for (int i = 0; i < count; i++)
+{
+    if (front[i] != back[i])
+      mes = "Не Палиндром";    
+}
+System.Console.WriteLine(mes);
